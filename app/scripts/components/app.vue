@@ -27,6 +27,7 @@ module.exports = {
     index: require("./index")
     new_user: require("./new_user")
     tasks: require("./tasks")
+    task_edit: require("./task_edit")
 
   created: ->
 

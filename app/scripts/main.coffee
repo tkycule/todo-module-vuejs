@@ -61,4 +61,13 @@ page("/tasks/:state", requireLogin, (ctx) ->
   app.$broadcast("changeState")
 )
 
+page("/tasks/:id/edit", requireLogin, (ctx) ->
+  app.id = ctx.params.id
+  app.view = "task_edit"
+)
+
+page("*", ->
+  page.redirect("/")
+)
+
 page()
