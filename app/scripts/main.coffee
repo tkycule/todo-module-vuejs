@@ -38,4 +38,8 @@ page("/", skipLogin, ->
   app.view = "index"
 )
 
+page("/users/new", skipLogin, ->
+  app.view = "new_user"
+)
+
 page()
