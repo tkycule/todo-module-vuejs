@@ -24,6 +24,7 @@ module.exports = {
 
   components:
     header: require("./header")
+    index: require("./index")
 
   created: ->
 

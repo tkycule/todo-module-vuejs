@@ -22,3 +22,20 @@ $.ajaxSetup({
       xhr.setRequestHeader('Authorization', currentUser.authentication_token)
 })
 
+requireLogin = (ctx, next) ->
+  if session.currentUser()
+    next()
+  else
+    page.redirect("/")
+
+skipLogin = (ctx, next) ->
+  if session.currentUser()
+    page.redirect("/tasks")
+  else
+    next()
+
+page("/", skipLogin, ->
+  app.view = "index"
+)
+
+page()
