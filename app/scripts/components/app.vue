@@ -26,6 +26,7 @@ module.exports = {
     header: require("./header")
     index: require("./index")
     new_user: require("./new_user")
+    tasks: require("./tasks")
 
   created: ->
 

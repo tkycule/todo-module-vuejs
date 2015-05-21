@@ -38,8 +38,27 @@ page("/", skipLogin, ->
   app.view = "index"
 )
 
+page("/logout", requireLogin, ->
+  session.logout()
+  app.$broadcast("changeCurrentUser")
+  app.$emit('Layout:flash', {class: 'alert-info', message: 'ログアウトしました。'})
+  page.redirect("/")
+)
+
 page("/users/new", skipLogin, ->
   app.view = "new_user"
+)
+
+page("/tasks", requireLogin, ->
+  app.view = "tasks"
+  App.state = "inbox"
+  app.$broadcast("changeState")
+)
+
+page("/tasks/:state", requireLogin, (ctx) ->
+  app.view = "tasks"
+  App.state = ctx.params.state
+  app.$broadcast("changeState")
 )
 
 page()
