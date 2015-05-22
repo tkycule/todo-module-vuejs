@@ -29,6 +29,20 @@
   </form>
 </div>
 
+<div class="well">
+  <h4>テスト用アカウント</h4>
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>メールアドレス</th>
+      <td>test@example.com</td>
+    </tr>
+    <tr>
+    <th>パスワード</th>
+    <td>password</td>
+    </tr>
+  </dl>
+</div>
+
 </template>
 
 <script lang="coffee" type="text/coffeescript">
